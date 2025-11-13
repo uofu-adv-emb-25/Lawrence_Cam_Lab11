@@ -4,9 +4,9 @@ if(WIN32)
 else()
     set(USERHOME $ENV{HOME})
 endif()
-set(sdkVersion 2.0.0)
+set(sdkVersion 2.2.0)
 set(toolchainVersion 13_2_Rel1)
-set(picotoolVersion 2.0.0)
+set(picotoolVersion 2.2.0)
 if(EXISTS ${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
     include(${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
 elseif(DEFINED ENV{PICO_SDK_PATH})
@@ -15,12 +15,6 @@ else()
     set(PICO_SDK_PATH lib/pico-sdk)
 endif()
 
-if(DEFINED ENV{FREERTOS_KERNEL_PATH})
-    set(FREERTOS_KERNEL_PATH $ENV{FREERTOS_KERNEL_PATH})
-else()
-    set(FREERTOS_KERNEL_PATH lib/freertos)
-endif()
-message("FreeRTOS path: ${FREERTOS_KERNEL_PATH}")
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # ====================================================================================
@@ -36,8 +30,17 @@ set(PICO_BOARD pico_w CACHE STRING "Board type")
 # This imports the Pico SDK (must be included before the project)
 include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
 
+# Let FREERTOS_PATH default to lib/freertos in this repo
+if(DEFINED ENV{FREERTOS_PATH})
+    set(FREERTOS_PATH $ENV{FREERTOS_PATH})
+else()
+    set(FREERTOS_PATH ${CMAKE_SOURCE_DIR}/lib/freertos)
+endif()
+
+include("${FREERTOS_PATH}/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake")
+
 # This imports the library configuration for FreeRTOS
-include(${FREERTOS_KERNEL_PATH}/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake)
+#include(/home/lawrence/Documents/Repos/ECE5785/RTOS\ Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake)
 
 # This defines your project name, you can name it anything you want.
 project(lab11 C CXX ASM)

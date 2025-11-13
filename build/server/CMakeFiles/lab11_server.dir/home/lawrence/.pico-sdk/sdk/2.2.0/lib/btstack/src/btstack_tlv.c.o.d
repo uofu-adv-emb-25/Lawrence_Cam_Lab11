@@ -1,0 +1,24 @@
+server/CMakeFiles/lab11_server.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/btstack/src/btstack_tlv.c.o: \
+ /home/lawrence/.pico-sdk/sdk/2.2.0/lib/btstack/src/btstack_tlv.c \
+ /home/lawrence/.pico-sdk/sdk/2.2.0/lib/btstack/src/btstack_tlv.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/include/stdint.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/include/machine/_default_types.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/include/sys/features.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/include/_newlib_version.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/include/sys/_intsup.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/include/sys/_stdint.h \
+ /home/lawrence/.pico-sdk/sdk/2.2.0/lib/btstack/src/btstack_debug.h \
+ /home/lawrence/Documents/Repos/ECE5785/Labs/Lawrence_Cam_Lab11/include/btstack_config.h \
+ /home/lawrence/.pico-sdk/sdk/2.2.0/lib/btstack/src/btstack_defines.h \
+ /home/lawrence/.pico-sdk/sdk/2.2.0/lib/btstack/src/btstack_version.h \
+ /home/lawrence/.pico-sdk/sdk/2.2.0/lib/btstack/src/btstack_linked_list.h \
+ /home/lawrence/.pico-sdk/sdk/2.2.0/lib/btstack/src/btstack_bool.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
+ /home/lawrence/.pico-sdk/sdk/2.2.0/lib/btstack/src/hci_dump.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/lib/gcc/arm-none-eabi/13.2.1/include/stdarg.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/include/assert.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/include/_ansi.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/include/newlib.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/include/sys/config.h \
+ /home/lawrence/.pico-sdk/toolchain/13_2_Rel1/arm-none-eabi/include/machine/ieeefp.h
