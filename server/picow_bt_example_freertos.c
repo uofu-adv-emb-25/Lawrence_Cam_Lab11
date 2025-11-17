@@ -22,6 +22,7 @@
 
 int btstack_main(int argc, const char * argv[]);
 static btstack_packet_callback_registration_t hci_event_callback_registration;
+static int  counter = 0;
 
 static void packet_handler(uint8_t packet_type, uint16_t channel, uint8_t *packet, uint16_t size){
     UNUSED(size);
@@ -34,6 +35,12 @@ static void packet_handler(uint8_t packet_type, uint16_t channel, uint8_t *packe
             gap_local_bd_addr(local_addr);
             printf("BTstack up and running on %s.\n", bd_addr_to_str(local_addr));
             break;
+        case HCI_EVENT_CONNECTION_COMPLETE:
+            counter++;
+            printf("A connection succeed with number of connections%d.\n" , counter);
+        case HCI_EVENT_CONNECTION_COMPLETE:
+             counter--;
+             printf("A diconnection succeed with number of connections%d.\n" , counter);
         default:
             break;
     }
