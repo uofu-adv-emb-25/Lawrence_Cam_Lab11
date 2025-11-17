@@ -48,6 +48,7 @@ void main_task(__unused void *params)
     } else {
         // inform about BTstack state
         hci_event_callback_registration.callback = &packet_handler;
+        vTaskDelay(10000);
         hci_add_event_handler(&hci_event_callback_registration);
         btstack_main(0, NULL);
     }
