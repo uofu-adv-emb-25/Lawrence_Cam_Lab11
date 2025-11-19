@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "picow_bt_example_common.h": "c",
-        "cstdint": "c"
+        "cstdint": "c",
+        "compare": "c"
     }
 }
