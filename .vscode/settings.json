@@ -2,6 +2,7 @@
     "files.associations": {
         "picow_bt_example_common.h": "c",
         "cstdint": "c",
-        "compare": "c"
+        "compare": "c",
+        "gatt_counter.h": "c"
     }
 }

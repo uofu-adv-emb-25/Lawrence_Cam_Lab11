@@ -218,13 +218,14 @@ static void packet_handler (uint8_t packet_type, uint16_t channel, uint8_t *pack
 // @param offset defines start of attribute value
 static uint16_t att_read_callback(hci_con_handle_t connection_handle, uint16_t att_handle, uint16_t offset, uint8_t * buffer, uint16_t buffer_size){
     UNUSED(connection_handle);
-
+    printf("Read %08x\n", att_handle);
     if (att_handle == ATT_CHARACTERISTIC_0000FF11_0000_1000_8000_00805F9B34FB_01_VALUE_HANDLE){
         return att_read_callback_handle_blob((const uint8_t *)counter_string, counter_string_len, offset, buffer, buffer_size);
     }
     else if (att_handle == ATT_CHARACTERISTIC_ORG_BLUETOOTH_CHARACTERISTIC_TEMPERATURE_01_VALUE_HANDLE){
-        return (uint16_t)(temperature_poll()*100);
-    }
+        uint16_t data = (uint16_t)(temperature_poll()*100);
+        return att_read_callback_handle_little_endian_16(data, offset, buffer, buffer_size);
+    } 
     return 0;
 }
 /* LISTING_END */
