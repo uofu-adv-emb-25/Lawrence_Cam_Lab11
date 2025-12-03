@@ -34,6 +34,14 @@ static void packet_handler(uint8_t packet_type, uint16_t channel, uint8_t *packe
             gap_local_bd_addr(local_addr);
             printf("BTstack up and running on %s.\n", bd_addr_to_str(local_addr));
             break;
+        case BTSTACK_EVENT_NR_CONNECTIONS_CHANGED:
+            uint8_t num;
+            if (num = btstack_event_nr_connections_changed_get_number_connections(packet)){
+                printf("Current connections at: %d\n", num);
+            }
+            else {
+                printf("No connections\n");
+            }
         default:
             break;
     }
@@ -48,6 +56,7 @@ void main_task(__unused void *params)
     } else {
         // inform about BTstack state
         hci_event_callback_registration.callback = &packet_handler;
+        vTaskDelay(10000);
         hci_add_event_handler(&hci_event_callback_registration);
         btstack_main(0, NULL);
     }
